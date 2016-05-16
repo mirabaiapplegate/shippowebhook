@@ -1,0 +1,17 @@
+<%= form_for(@webhook_log) do |f| %>
+  <% if @webhook_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@webhook_log.errors.count, "error") %> prohibited this webhook_log from being saved:</h2>
+
+      <ul>
+      <% @webhook_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

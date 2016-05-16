@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Webhook Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blobs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @webhook_logs.each do |webhook_log| %>
+      <tr>
+        <td><%= webhook_log.jsonblob %></td>
+        <td><%= link_to 'Show', webhook_log %></td>
+        <td><%= link_to 'Edit', edit_webhook_log_path(webhook_log) %></td>
+        <td><%= link_to 'Destroy', webhook_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Webhook log', new_webhook_log_path %>
